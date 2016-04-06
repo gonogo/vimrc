@@ -1,10 +1,16 @@
 "Use Pathogen
+au VimEnter *  NERDTree
 execute pathogen#infect()
-colorscheme darkblue " set guifont=letter\ gothic\ std\ medium:h21
+"syntax on "syntax highlighting
+syntax enable
+set background=dark
+colorscheme solarized
+"colorscheme darkblue " set guifont=letter\ gothic\ std\ medium:h21
+nnoremap qw :silent! normal <SPACE><SPACE><SPACE><SPACE><SPACE>mpea'<Esc>bi'<Esc>`pl 
+set number
 set guifont=Bloomberg\ Fixed\ Unicode\ C:h16 
 "set guifont=Sauce\ Code\ Powerline:h16
 set clipboard=unnamed " Yanks to clipboard - MacVim only.
-syntax on "syntax highlighting
 "folding
 set foldenable
 set foldmethod=indent
@@ -28,13 +34,15 @@ command! -nargs=* Wrap set wrap linebreak nolist "wrap properly when writing
 map <Up> gk
 map <Down> gj
 map! <leader>§ ✗
-" map! § ✓ " This one is for ticking stuff.
+" This one is for ticking stuff.
+map! § ✓ 
 " this one is for inserting the date at the cursor
-map! § <SPACE><BACKSPACE><ESC>m'A<C-R>=strftime('%H:%M:%S')<CR> 
+"map! § <SPACE><BACKSPACE><ESC>m'A<C-R>=strftime('%H:%M:%S')<CR><CR><CR>
 "because I'm too lazy to hit ctrl-w to move around different windows.
 map <leader>w <C-W>
 " Edit vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR> 
+nmap <silent> <leader>ev :e ~/.vim/vimrc<CR> 
+nmap <silent> <leader>ej :e ~/Documents/journal.txt<CR>G<ESC>m'A<C-R>=strftime('%a %d %b %Y %H:%M')<CR> 
 " ... and then source it (execute each line from the file as it would on startup)
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>x :!python %<CR>
@@ -85,3 +93,4 @@ nmap <silent> <leader>d :call OpenFilesSplit()<CR>
 nmap <silent> <leader>D :call OpenFilesTab()<CR>
 map <leader>u :call HandleURL()<cr>
 map <leader>g :call Google()<cr>
+autocmd VimEnter * wincmd w
