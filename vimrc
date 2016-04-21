@@ -5,11 +5,12 @@ execute pathogen#infect()
 syntax enable
 set background=dark
 colorscheme solarized
+"set guifont=letter\ gothic\ std\ medium:h16
 "colorscheme darkblue " set guifont=letter\ gothic\ std\ medium:h21
 nnoremap qw :silent! normal <SPACE><SPACE><SPACE><SPACE><SPACE>mpea'<Esc>bi'<Esc>`pl 
 set number
-set guifont=Bloomberg\ Fixed\ Unicode\ C:h16 
-"set guifont=Sauce\ Code\ Powerline:h16
+"set guifont=Bloomberg\ Fixed\ Unicode\ C:h28 
+set guifont=Sauce\ Code\ Powerline:h16
 set clipboard=unnamed " Yanks to clipboard - MacVim only.
 "folding
 set foldenable
